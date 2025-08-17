@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Agrega aqui el producto</p>
+    <a href="./index.html">Volver al menu</a>
+    <div class="product-card-form">
+      <h3>Agregar Producto</h3>
+      <input
+        type="text"
+        id="nombreProducto"
+        placeholder="Nombre del producto"
+      />
+      <input
+        type="number"
+        id="precioKilo"
+        placeholder="Precio por kilo"
+        step="0.01"
+      />
+      <button onclick="agregarProducto()">Agregar</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  list-style-type: none;
+  text-align: center;
+}
+
+.button-link {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 1%;
+  margin-top: 1%;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  border-color: black;
+  padding: 1%;
+  margin-top: 1%;
+}
+
+.product {
+  border: 2px solid black;
+  width: 300px;
+}
+
+#products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: steelblue;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+}
+
+.product-card {
+  width: 150px;
+  height: 100px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card h3,
+.product-card h4 {
+  margin: 0;
+  margin-bottom: 5px; /* Ajusta este valor según necesites */
+}
+
+.product-card-form {
+  width: 200px;
+  border: 2px solid black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.product-card-form input {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.product-card-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

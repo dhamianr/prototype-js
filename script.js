@@ -9,11 +9,27 @@ let productos = [
     nombreProducto: "Manzana",
     preciokilo: 2000.0,
   },
+  {
+    productoId: 3,
+    nombreProducto: "Papa",
+    preciokilo: 1500.0,
+  },
+  {
+    productoId: 4,
+    nombreProducto: "Cebolla",
+    preciokilo: 1000.0,
+  },
+  {
+    productoId: 5,
+    nombreProducto: "Lechuga",
+    preciokilo: 1700.0,
+  },
 ];
 
+/*
 const agregarProducto = (a, b, c) =>
   productos.push({ productoId: a, nombreProducto: b, preciokilo: c });
-
+*/
 const eliminarProductoPorId = (a) => {
   for (let i = 0; i < productos.length; i++) {
     if (productos[i].productoId == a) {
@@ -55,6 +71,49 @@ function sumarProductos(...items) {
 //-----------------
 let opciones;
 
+const agregarProducto = () => {
+  const nombreInput = document.getElementById("nombreProducto");
+  const precioInput = document.getElementById("precioKilo");
+
+  const nombreProducto = nombreInput.value.trim();
+  const preciokilo = parseFloat(precioInput.value);
+
+  // Validaciones básicas
+  if (!nombreProducto) {
+    alert("Por favor ingresa un nombre de producto");
+    return;
+  }
+
+  if (isNaN(preciokilo) || preciokilo <= 0) {
+    alert("Por favor ingresa un precio válido");
+    return;
+  }
+
+  // Crear nuevo producto
+  const nuevoProducto = {
+    productoId: productos.length + 1, // O generar ID único
+    nombreProducto: nombreProducto,
+    preciokilo: preciokilo,
+  };
+
+  // Agregar al array
+  productos.push(nuevoProducto);
+
+  // Limpiar inputs
+  nombreInput.value = "";
+  precioInput.value = "";
+
+  // Re-renderizar la lista
+  /*renderizarProductos(); */
+
+  console.log("Producto agregado:", nuevoProducto);
+
+  console.table(productos);
+
+  localStorage.setItem("productos", JSON.stringify(productos));
+};
+
+/*
 do {
   let input = prompt(
     "Elige una opción amiguito:\n1. Agregar producto\n2. Ver productos agregados\n3. Sumar compra\n4. eliminar un producto \n9. Salir"
@@ -139,3 +198,63 @@ do {
       break;
   }
 } while (opciones !== 9);
+*/
+
+const renderizarProductos = () => {
+  let container = document.getElementById("products");
+
+  // Solo ejecutar si el elemento existe
+  if (!container) {
+    return; // Salir silenciosamente si no encuentra el elemento
+  }
+
+  // Verificar si hay productos
+  if (productos.length === 0) {
+    container.innerHTML =
+      '<div class="sistema-vacio">No hay productos en el sistema</div>';
+    return;
+  }
+
+  let todosLosProductos = "";
+
+  productos.forEach((producto) => {
+    todosLosProductos += `
+    <div class="product-card">
+      <h3>${producto.nombreProducto}</h3>
+      <h4>Precio: ${producto.preciokilo} ARS</h4>
+    </div>
+      `;
+  });
+
+  //console.log(todosLosProductos);
+
+  container.innerHTML = todosLosProductos;
+};
+
+renderizarProductos();
+console.table(productos);
+
+localStorage.setItem("productos", JSON.stringify(productos));
+
+console.log(productos.length);
+
+const salir = () => {
+  if (confirm("¿Estás seguro que quieres salir?")) {
+    window.location.href = "index.html";
+  }
+};
+
+// Función para limpiar mi sistema
+const vaciarSistema = () => {
+  if (
+    confirm(
+      "¿Estás seguro de que quieres limpiar todos los productos del sistema?"
+    )
+  ) {
+    productos = [];
+    renderizarProductos();
+    console.log(productos);
+    // Guardo en mi local storage
+    localStorage.setItem("productos", JSON.stringify(productos));
+  }
+};
