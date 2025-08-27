@@ -63,7 +63,7 @@ button {
 .product-card h3,
 .product-card h4 {
   margin: 0;
-  margin-bottom: 5px; /* Ajusta este valor según necesites */
+  margin-bottom: 5px; 
 }
 
 .product-card-form {

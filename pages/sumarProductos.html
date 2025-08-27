@@ -3,29 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
 
     <title>Document</title>
   </head>
   <body>
     <p>Estos son mis productos en el sistema</p>
-    <a href="./index.html">Volver al menu</a>
+    <a href="../index.html">Volver al menu</a>
     <div id="products"></div>
 
-    <!-- SECCIÓN CARRITO -->
+    <!-- SECCION CARRITO -->
     <div class="carrito-section">
       <h2>Mi Carrito</h2>
       <div id="carrito-items">
-        <!-- Los items del carrito se renderizan aquí -->
+        <!-- Los items de mi carrito se renderizan aca -->
       </div>
       <div class="carrito-total">
         <h3>Total:</h3>
         <div class="total-amount" id="total-carrito">$0.00</div>
-        <button class="btn-vaciar" onclick="vaciarCarrito()">
+        <button class="btn-vaciar" id="btn-vaciar-carrito">
           Vaciar Carrito
         </button>
       </div>
     </div>
-    <script src="./sumarProductos.js"></script>
+    <script src="../scripts/productManager.js"></script>
+    <script src="../scripts/sumarProductos.js"></script>
   </body>
 </html>

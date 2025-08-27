@@ -3,27 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
   <body>
     <h1>Bienvenido al sistema de gestión de productos</h1>
     <h2>Elige una opción</h2>
     <li>
-      <a href="./agregarProducto.html" class="button-link">Agregar producto </a>
+      <a href="./pages/agregarProducto.html" class="button-link"
+        >Agregar producto
+      </a>
     </li>
     <li>
-      <a href="./productos.html" class="button-link">Ver productos agregados</a>
+      <a href="./pages/productos.html" class="button-link"
+        >Ver productos agregados</a
+      >
     </li>
     <li>
-      <a href="./sumarProductos.html" class="button-link">Sumar compra</a>
+      <a href="./pages/sumarProductos.html" class="button-link">Sumar compra</a>
     </li>
     <li>
-      <a href="./eliminarProducto.html" class="button-link"
+      <a href="./pages/eliminarProducto.html" class="button-link"
         >Eliminar un producto</a
       >
     </li>
-    <li><button onclick="salir()">Salir</button></li>
-    <script src="./script.js"></script>
+    <li><button id="btn-salir">Salir</button></li>
+    <script src="./scripts/productManager.js"></script>
   </body>
 </html>
